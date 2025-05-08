@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Hero from "@/components/Hero";
-import Sobre from "@/components/Sobre";
 import Servicos from "@/components/Servicos";
 import Equipe from "@/components/Equipe";
 import About from "@/components/About";
+import Depoimentos from "@/components/Depoimentos";
 import { Inter } from "next/font/google";
 
 export default function Home() {
@@ -13,9 +13,9 @@ export default function Home() {
           message="Mais do que oferecer cuidados de saúde, prezamos por um atendimento humano, ético e acolhedor, colocando você sempre em primeiro lugar."
     />
     <About/>
-    
     <Servicos/>
     <Equipe/>
+    <Depoimentos/>
     </div>
   );
 }

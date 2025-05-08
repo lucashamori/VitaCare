@@ -48,7 +48,7 @@ const slides = [
   },
 ];
 
-export default function Servicos() {
+export default function Depoimentos() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     skipSnaps: false,
@@ -86,7 +86,7 @@ export default function Servicos() {
   }, [emblaApi, onSelect]);
 
   return (
-    <section id="servicos" className="bg-zinc-800 py-16 p-1 w-full">
+    <section id="depoimentos" className="bg-blue-200 py-16">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-zinc-100 mb-12 text-center">
           Nossos Serviços

@@ -6,7 +6,7 @@ import { Dot, Check } from "lucide-react";
 
 export default function About() {
     return (
-        <section className="bg-gray-200 py-16" id="about">
+        <section className="bg-gray-200 py-16 " id="about">
             <div className="container mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
@@ -15,9 +15,11 @@ export default function About() {
                         <Image
                             src={aboutImg}
                             alt="Sobre a clínica"
-                            className="object-cover w-full h-full rounded-5xl"
+                            className="object-cover w-full h-full rounded-5xl hover:scale-110  duration-300"
                             quality={100}
                             priority={true}
+                            
+
                         />
                         
                     </div>
