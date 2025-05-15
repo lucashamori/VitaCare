@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import Sobre from "./Sobre";
+
 
 const Navbar = () => {
     const [nav, setNav] = useState(false);
@@ -70,9 +70,7 @@ const Navbar = () => {
                     <li className="p-4 py-2 hover:text-blue-500">
                         <a className="cursor-pointer" onClick={() => scrollToSection("servicos")}>Serviços</a>
                     </li>
-                    <li className="p-4 py-2 hover:text-blue-500">
-                        <a className="cursor-pointer" onClick={() => scrollToSection("equipe")}>Equipe</a>
-                    </li>
+                    
                     <li className="p-4 py-2 hover:text-blue-500">
                         <a className="cursor-pointer" onClick={() => scrollToSection("depoimentos")}>Depoimentos</a>
                     </li>

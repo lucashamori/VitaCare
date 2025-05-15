@@ -3,48 +3,58 @@
 import useEmblaCarousel from 'embla-carousel-react';
 import { useCallback, useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import tutor1 from '../../public/tutor1.png' 
+import Image from 'next/image'
 
 
 const slides = [
   {
     title: 'Clínica Geral',
     description:
-      'Atendimento médico completo para avaliação de sintomas, exames de rotina e orientações preventivas.'
+      'Atendimento médico completo para avaliação de sintomas, exames de rotina e orientações preventivas.',
+    image: tutor1,  
   },
   {
     title: 'Consultas Médicas Especializadas',
     description:
       'Profissionais em ginecologia, pediatria, cardiologia e mais. Atendimento humanizado e eficiente.',
+      image: tutor1,
   },
   {
     title: 'Vacinação e Imunização',
     description:
       'Aplicação de vacinas com equipe treinada. Ambiente seguro para você e sua família.',
+      image: tutor1,
   },
   {
     title: 'Exames Laboratoriais',
     description:
       'Realize seus exames com rapidez, segurança e comodidade em nossa clínica.',
+      image: tutor1,
   },
   {
     title: 'Exames de Imagem',
     description:
       'Contamos com equipamentos modernos para garantir diagnósticos precisos e rápidos.',
+      image: tutor1,
   },
   {
     title: 'Atendimento Domiciliar',
     description:
       'Serviço de saúde no conforto do seu lar. Ideal para pacientes com dificuldade de locomoção.',
+      image: tutor1,
   },
   {
     title: 'Acompanhamento Nutricional',
     description:
       'Nutricionistas capacitados para ajudar na sua alimentação e saúde.',
+      image: tutor1,
   },
   {
     title: 'Saúde Mental',
     description:
       'Psicólogos e psiquiatras prontos para cuidar da sua saúde mental com empatia e profissionalismo.',
+    image: tutor1,
   },
 ];
 
@@ -86,9 +96,9 @@ export default function Servicos() {
   }, [emblaApi, onSelect]);
 
   return (
-    <section id="servicos" className="bg-zinc-800 py-16 p-1 w-full">
+    <section id="servicos" className="bg-black py-16 p-1 w-full">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-zinc-100 mb-12 text-center">
+        <h2 className="text-4xl font-bold text-white mb-12  uppercase">
           Nossos Serviços
         </h2>
 
@@ -98,11 +108,12 @@ export default function Servicos() {
             <div className="flex gap-8"> {/* Adicionado gap-8 para espaçamento entre cards */}
               {slides.map((slide, index) => (
                 <div key={index} className="flex-none w-full pl-4 first:pl-0"> {/* Adicionado padding left e exceção para o primeiro */}
-                  <article className="bg-gradient-to-r from-zinc-200 to-zinc-600 text-zinc-100 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition duration-300 h-full">
+                  <article className="bg-gradient-to-r from-zinc-200 to-zinc-600 text-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition duration-300 h-full">
+                   
                     <h3 className="text-2xl md:text-3xl font-semibold mb-4">
                       {slide.title}
                     </h3>
-                    <p className="text-zinc-100 text-lg">
+                    <p className="text-zinc-200 text-lg">
                       {slide.description}
                     </p>
                   </article>

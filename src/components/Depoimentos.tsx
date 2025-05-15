@@ -3,48 +3,33 @@
 import useEmblaCarousel from 'embla-carousel-react';
 import { useCallback, useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-
+import tutor1 from '../../public/tutor1.png' 
+import Image from 'next/image'
 
 const slides = [
   {
-    title: 'Clínica Geral',
+    title: 'Pedro Almeida',
     description:
-      'Atendimento médico completo para avaliação de sintomas, exames de rotina e orientações preventivas.'
+      'A clínica é maravilhosa! Sempre que preciso, sou atendida com rapidez e eficiência. Os profissionais são muito capacitados e sempre demonstram preocupação com o paciente.',
+    image: tutor1,  
   },
   {
-    title: 'Consultas Médicas Especializadas',
+    title: 'João Lima',
     description:
-      'Profissionais em ginecologia, pediatria, cardiologia e mais. Atendimento humanizado e eficiente.',
+      'Atendimento humanizado e ágil. Os médicos são muito atenciosos e explicam tudo com clareza. Sinto confiança em cada consulta e sei que estou em boas mãos',
+    image: tutor1,
   },
   {
-    title: 'Vacinação e Imunização',
+    title: 'Carlos Mendes',
     description:
-      'Aplicação de vacinas com equipe treinada. Ambiente seguro para você e sua família.',
+      'Eu sempre tive receio de ir ao médico, mas na clínica me senti acolhido desde o primeiro momento. Os profissionais são extremamente competentes e o ambiente é muito acolhedor. Não troco essa clínica por nenhuma outra!',
+    image: tutor1,
   },
   {
-    title: 'Exames Laboratoriais',
+    title: 'Mariana Oliveira',
     description:
-      'Realize seus exames com rapidez, segurança e comodidade em nossa clínica.',
-  },
-  {
-    title: 'Exames de Imagem',
-    description:
-      'Contamos com equipamentos modernos para garantir diagnósticos precisos e rápidos.',
-  },
-  {
-    title: 'Atendimento Domiciliar',
-    description:
-      'Serviço de saúde no conforto do seu lar. Ideal para pacientes com dificuldade de locomoção.',
-  },
-  {
-    title: 'Acompanhamento Nutricional',
-    description:
-      'Nutricionistas capacitados para ajudar na sua alimentação e saúde.',
-  },
-  {
-    title: 'Saúde Mental',
-    description:
-      'Psicólogos e psiquiatras prontos para cuidar da sua saúde mental com empatia e profissionalismo.',
+      'Fui muito bem atendida, desde a recepção até o momento da consulta. A estrutura é moderna e os profissionais são muito qualificados. Me senti segura e bem cuidada durante todo o processo. Super indico!',
+    image: tutor1,
   },
 ];
 
@@ -53,12 +38,11 @@ export default function Depoimentos() {
     loop: true,
     skipSnaps: false,
     duration: 20,
-    align: 'start', // Adicionado para melhor controle do alinhamento
-  },);
+    align: 'center', // Ajuste para centralizar o conteúdo
+  });
 
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
-  const [selectedIndex, setSelectedIndex] = useState(0);
 
   const scrollPrev = useCallback(() => {
     emblaApi?.scrollPrev();
@@ -72,7 +56,6 @@ export default function Depoimentos() {
     if (!emblaApi) return;
     setPrevBtnEnabled(emblaApi.canScrollPrev());
     setNextBtnEnabled(emblaApi.canScrollNext());
-    setSelectedIndex(emblaApi.selectedScrollSnap());
   }, [emblaApi]);
 
   useEffect(() => {
@@ -86,32 +69,38 @@ export default function Depoimentos() {
   }, [emblaApi, onSelect]);
 
   return (
-    <section id="depoimentos" className="bg-blue-200 py-16">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-zinc-100 mb-12 text-center">
-          Nossos Serviços
-        </h2>
+    <section id="depoimentos" className="bg-white py-16 w-full justify-items-center">
+      <div className="container mx-auto px-4 text-center justify-items-center">
+        <h2 className="text-4xl font-bold text-black  justify-items-centermb-12">DEPOIMENTOS</h2>
 
-        {/* Card principal com navegação */}
-        <div className="relative max-w-4xl mx-auto">
-          <div ref={emblaRef} className="overflow-hidden">
-            <div className="flex gap-8"> {/* Adicionado gap-8 para espaçamento entre cards */}
+        <div className="relative max-w-5xl mx-auto justify-items-center">
+          <div ref={emblaRef} className="overflow-hidden justify-items-center">
+            <div className="flex gap-8">
               {slides.map((slide, index) => (
-                <div key={index} className="flex-none w-full pl-4 first:pl-0"> {/* Adicionado padding left e exceção para o primeiro */}
-                  <article className="bg-gradient-to-r from-zinc-200 to-zinc-600 text-zinc-100 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition duration-300 h-full">
-                    <h3 className="text-2xl md:text-3xl font-semibold mb-4">
-                      {slide.title}
-                    </h3>
-                    <p className="text-zinc-100 text-lg">
-                      {slide.description}
-                    </p>
+                <div key={index} className="flex-none w-full pl-4 first:pl-0">
+                  <article className="bg-gradient-to-r from-zinc-200 to-zinc-600 text-black rounded-2xl p-8 transition duration-300 h-full">
+                    <div className='flex flex-col items-center space-y-4'>
+                      <div className='relative w-24 h-24'>
+                        <Image
+                          src={slide.image}
+                          fill
+                          sizes='96px'
+                          className='object-cover rounded-full'
+                        />
+                      </div>
+                      <h3 className="text-2xl md:text-3xl font-semibold">
+                        {slide.title}
+                      </h3>
+                      <p className="text-black text-lg">
+                        {slide.description}
+                      </p>
+                    </div>
                   </article>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Botões de navegação */}
           <button
             onClick={scrollPrev}
             disabled={!prevBtnEnabled}
@@ -124,7 +113,7 @@ export default function Depoimentos() {
           <button
             onClick={scrollNext}
             disabled={!nextBtnEnabled}
-            className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-12  text-zinc-100 p-2 rounded-full shadow-lg hover:bg-blue-50 transition transform hover:scale-110 ${!nextBtnEnabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+            className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 text-zinc-100 p-2 rounded-full shadow-lg hover:bg-blue-50 transition transform hover:scale-110 ${!nextBtnEnabled ? 'opacity-50 cursor-not-allowed' : ''}`}
             aria-label="Próximo slide"
           >
             <ChevronRight size={32} strokeWidth={2.5} />
@@ -134,3 +123,4 @@ export default function Depoimentos() {
     </section>
   );
 }
+

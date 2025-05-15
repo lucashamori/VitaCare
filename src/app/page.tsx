@@ -1,10 +1,12 @@
 import Image from "next/image";
 import Hero from "@/components/Hero";
 import Servicos from "@/components/Servicos";
-import Equipe from "@/components/Equipe";
+import Footer from "@/components/Footer";
 import About from "@/components/About";
 import Depoimentos from "@/components/Depoimentos";
+import Equipe from "@/components/Equipe";
 import { Inter } from "next/font/google";
+import { createContext, useContext } from 'react';
 
 export default function Home() {
   return (
@@ -14,8 +16,10 @@ export default function Home() {
     />
     <About/>
     <Servicos/>
-    <Equipe/>
     <Depoimentos/>
+    <Footer/>
+    
+    
     </div>
   );
 }

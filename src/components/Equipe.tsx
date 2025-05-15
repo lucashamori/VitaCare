@@ -1,29 +1,63 @@
+
+import { FacebookLogo, InstagramLogo, YoutubeLogo } from '@phosphor-icons/react'
 const Equipe = () => {
     return (
-      <div
-        id="equipe"
-        className="w-full p-1 py-16 bg-fixed bg-center bg-cover bg-black"
-      >
-        <div className="flex items-center justify-start h-screen">
-          <div className="col-span-2 max-w-xl pl-10 text-left p-4">
-            <p className="text-5xl font-bold max-w-xl uppercase text-white">
-              Equipe
-            </p>
-  
-            <p className="py-2 text-xl pr-8 text-left text-white">
-              Na VitaCare, acreditamos que a saúde é o bem mais precioso que alguém pode ter.
-              Por isso, oferecemos um atendimento humanizado, acolhedor e centrado nas necessidades
-              individuais de cada paciente.
-            </p>
-            <p className="py-2 text-xl pr-8 text-left text-white">
-                Nossa clínica foi fundada com o propósito de unir
-              tecnologia, ciência e empatia em um único espaço de cuidado integral à saúde.
-            </p>
+      <section className="bg-[#E84c3d] py-16 text-white">
+      <div className='container mx-auto px-4'>
+
+        
+
+        <footer className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 mt-5'>
+          <div>
+            <h3 className='text-2xl font-semibold mb-2'>Vita Care</h3>
+            <p className='mb-4'>Cuidando do seu melhor amigo com amor e dedicação.</p>
+            <a
+              href="#"
+              className='bg-green-500 px-4 py-2 rounded-md'
+            >
+              Contato via WhatsApp
+            </a>
           </div>
-        </div>
+
+
+          <div>
+            <h3 className='text-2xl font-semibold mb-2'>Contatos</h3>
+            <p>Email: teste@teste.com</p>
+            <p>Telefone: (XX) 1231831238</p>
+            <p>Rua X, centro, Campo Grande | MS</p>
+          </div>
+
+
+          <div>
+            <h3 className='text-2xl font-semibold mb-2'>Redes sociais</h3>
+            <div className='flex gap-4'>
+              <a
+                href="#"
+                target='_blank'
+              >
+                <FacebookLogo className='w-8 h-8' />
+              </a>
+              <a
+                href="#"
+                target='_blank'
+              >
+                <InstagramLogo className='w-8 h-8' />
+              </a>
+              <a
+                href="#"
+                target='_blank'
+              >
+                <YoutubeLogo className='w-8 h-8' />
+              </a>
+            </div>
+          </div>
+
+        </footer>
+
       </div>
+    </section>
     );
   };
   
-  export default Equipe;
+ export default Equipe; 
   
